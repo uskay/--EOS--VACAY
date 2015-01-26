@@ -10,7 +10,7 @@ import java.lang.annotation.ElementType;
  * Created by uskay on 1/26/15.
  */
 @Target(ElementType.METHOD)
-public @interface ServiceAPI {
-    String path();
+public @interface ServiceAnnotation {
+    String resource();
     String httpMethod();
 }

@@ -9,6 +9,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  * Created by uskay on 1/25/15.
  */
 @Data @XmlRootElement
-public class SessionBean implements IRequest {
+public class RequestSessionBean implements IRequest {
     private String sessionID;
 }

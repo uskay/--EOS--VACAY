@@ -3,6 +3,7 @@ package com.thevacay.core;
 import org.springframework.validation.BindingResult;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -18,20 +19,26 @@ public class ServiceController {
             return null;
         }
 
+        String rootPackage = "com.thevacay";
         String servicePackage = "service." + serviceName;
         String className = serviceName.substring(0,1).toUpperCase() + serviceName.substring(1) + "Service";
 
         try {
-            Class<?> clazz = Class.forName(servicePackage + "." + className);
+            Class<?> clazz = Class.forName(rootPackage + "." + servicePackage + "." + className);
             Method executeMethod = null;
             Method[] methods = clazz.getDeclaredMethods();
             for(Method m : methods){
-                ServiceAnnotation serviceAnnotation = m.getDeclaredAnnotation(ServiceAnnotation.class);
+
+                ServiceAnnotation serviceAnnotation = m.getAnnotation(ServiceAnnotation.class);
+                if(resourceName == null || serviceAnnotation == null){
+                    continue;
+                }
                 if(resourceName.equals(serviceAnnotation.resource())){
                     executeMethod = m;
                     break;
                 }
             }
+
 
             if(executeMethod == null) {
                 return null;

@@ -11,10 +11,11 @@ public class SessionService {
 
     @ServiceAnnotation(resource = "token", httpMethod = "GET")
     public IResponse getSessionToken(IRequest req) {
-        SessionBean bean = (SessionBean) req;
-
-
-        return null;
+        RequestSessionBean bean = (RequestSessionBean) req;
+        System.out.println(bean.getSessionID());
+        ResponseSessionBean res = new ResponseSessionBean();
+        res.setReturnCode("aaa");
+        return res;
     }
 
     @ServiceAnnotation(resource = "operation", httpMethod = "POST")

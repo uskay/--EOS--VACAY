@@ -9,12 +9,14 @@ import org.springframework.context.annotation.Configuration;
  * Created by uskay on 1/24/15.
  */
 @Configuration
-@ComponentScan
+@ComponentScan("com.thevacay.controller")
 @EnableAutoConfiguration
 public class Application {
 
     public static void main(String[] args) {
+
         SpringApplication.run(Application.class, args);
+
     }
 
 }

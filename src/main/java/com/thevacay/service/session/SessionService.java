@@ -1,26 +1,28 @@
 package com.thevacay.service.session;
 
-import com.thevacay.core.IRequest;
-import com.thevacay.core.IResponse;
-import com.thevacay.core.ServiceAnnotation;
+import com.thevacay.model.requestparameters.session.SessionLogRequest;
+import com.thevacay.model.requestparameters.session.SessionTokenRequest;
+import com.thevacay.model.responseparameters.session.SessionLogResponse;
+import com.thevacay.model.responseparameters.session.SessionTokenResponse;
+import com.thevacay.service.interfaces.ISessionService;
+import org.springframework.stereotype.Service;
 
 /**
- * Created by uskay on 1/25/15.
+ * Created by uskay on 1/29/15.
  */
-public class SessionService {
+@Service
+public class SessionService implements ISessionService {
 
-    @ServiceAnnotation(resource = "token", httpMethod = "GET")
-    public IResponse getSessionToken(IRequest req) {
-        RequestSessionBean bean = (RequestSessionBean) req;
-        System.out.println(bean.getSessionID());
-        ResponseSessionBean res = new ResponseSessionBean();
-        res.setReturnCode("aaa");
-        return res;
-    }
-
-    @ServiceAnnotation(resource = "operation", httpMethod = "POST")
-    public IResponse logOperation(IRequest req) {
+    @Override
+    public SessionTokenResponse getToken(SessionTokenRequest request) {
+        System.out.println("kitayo!");
         return null;
     }
+
+    @Override
+    public SessionLogResponse writeLog(SessionLogRequest request) {
+        return null;
+    }
+
 
 }

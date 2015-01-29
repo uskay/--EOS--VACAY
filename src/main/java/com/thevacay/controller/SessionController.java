@@ -22,7 +22,7 @@ import javax.validation.Valid;
 @ComponentScan("com.thevacay.service.session")
 @RequestMapping(value = "/session")
 @RestController
-public class SessionAPI {
+public class SessionController {
 
     @Autowired
     private ISessionService sessionService;

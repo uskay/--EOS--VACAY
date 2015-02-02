@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by uskay on 1/24/15.
  */
 @Configuration
-@ComponentScan("com.thevacay.controller")
+@ComponentScan("com.thevacay.api")
 @EnableAutoConfiguration
 public class Application {
 

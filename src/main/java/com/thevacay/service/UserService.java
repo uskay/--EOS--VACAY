@@ -13,7 +13,17 @@ public class UserService implements IUserService {
 
 
     @Override
+    public UserResponseBean getCurrentSessionUserInfo() {
+        return null;
+    }
+
+    @Override
     public UserResponseBean addUser(UserRequestBean request) {
+        return null;
+    }
+
+    @Override
+    public UserResponseBean updateUserInfo(UserRequestBean request) {
         return null;
     }
 

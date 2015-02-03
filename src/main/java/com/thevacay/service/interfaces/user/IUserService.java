@@ -5,6 +5,8 @@ package com.thevacay.service.interfaces.user;
  */
 public interface IUserService {
 
+    public UserResponseBean getCurrentSessionUserInfo();
     public UserResponseBean addUser(UserRequestBean request);
+    public UserResponseBean updateUserInfo(UserRequestBean request);
 
 }

@@ -7,4 +7,9 @@ import lombok.Data;
  */
 @Data
 public class UserRequestBean {
+
+    private String userID;
+    private String emailAddress;
+    private String loginPassword;
+
 }

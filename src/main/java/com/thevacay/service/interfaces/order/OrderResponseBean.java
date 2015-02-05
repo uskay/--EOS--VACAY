@@ -7,4 +7,8 @@ import lombok.Data;
  */
 @Data
 public class OrderResponseBean {
+
+    private String userID;
+    private String itemID;
+
 }

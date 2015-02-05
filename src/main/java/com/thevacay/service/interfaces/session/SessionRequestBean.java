@@ -7,4 +7,9 @@ import lombok.Data;
  */
 @Data
 public class SessionRequestBean {
+
+    private String userID;
+    private String password;
+    private String operationID;
+
 }

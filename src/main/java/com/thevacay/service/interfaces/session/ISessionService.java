@@ -8,7 +8,7 @@ import com.thevacay.core.SessionData;
 public interface ISessionService {
 
     public SessionResponseBean logon(SessionRequestBean bean);
-    public SessionResponseBean logoff(SessionRequestBean bean);
+    public SessionResponseBean logoff();
     public SessionResponseBean traceOperation(SessionRequestBean bean);
 
 }

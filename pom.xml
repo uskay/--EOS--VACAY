@@ -43,6 +43,14 @@
             <version>1.0.0.RELEASE</version>
         </dependency>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+         <dependency>
             <!-- for test use -->
             <groupId>redis.embedded</groupId>
             <artifactId>embedded-redis</artifactId>

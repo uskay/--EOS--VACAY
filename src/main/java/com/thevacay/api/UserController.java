@@ -20,7 +20,7 @@ import javax.validation.Valid;
  * Created by uskay on 1/24/15.
  */
 @Configuration
-@ComponentScan("com.theservicevacay.")
+@ComponentScan("com.thevacay.service")
 @RequestMapping(value = "/user")
 @RestController
 public class UserController {

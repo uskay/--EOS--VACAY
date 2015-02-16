@@ -1,6 +1,7 @@
 package com.thevacay.entity;
 
 import com.thevacay.entity.vo.PaymentMethod;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,7 +10,8 @@ import java.util.List;
  * Created by uskay on 2/4/15.
  */
 @Entity
-public class User {
+@Table(name = "USER")
+public @Data class User {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )

@@ -7,6 +7,7 @@ import javax.persistence.*;
 /**
  * Created by uskay on 2/15/15.
  */
+@Table(name = "USER_ADDRESS")
 public class UserAddress {
 
     @Id

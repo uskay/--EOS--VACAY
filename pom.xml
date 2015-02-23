@@ -42,14 +42,37 @@
             <artifactId>spring-session-data-redis</artifactId>
             <version>1.0.0.RELEASE</version>
         </dependency>
+
+        <!--
+        #################
+        #
+        #      JPA
+        #
+        #################
+        -->
+        <!-- Database -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <!-- DataSource -->
         <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <!-- JPA Provider -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+        <!-- Spring Data JPA -->
+         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
+
+
          <dependency>
             <!-- for test use -->
             <groupId>redis.embedded</groupId>

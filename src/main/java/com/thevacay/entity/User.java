@@ -22,11 +22,11 @@ public @Data class User {
     @Enumerated(EnumType.ORDINAL)
     private PaymentMethod lastUsedPaymentMethod;
 
-    @OneToMany
-    private List<UserAddress> userAddressList;
-
-    @OneToOne
-    private UserCredential userCredential;
+//    @OneToMany
+//    private List<UserAddress> userAddressList;
+//
+//    @OneToOne(targetEntity = UserCredential.class)
+//    private UserCredential UserCredential;
 
 
 

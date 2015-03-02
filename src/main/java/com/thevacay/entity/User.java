@@ -22,11 +22,13 @@ public @Data class User {
     @Enumerated(EnumType.ORDINAL)
     private PaymentMethod lastUsedPaymentMethod;
 
-//    @OneToMany
-//    private List<UserAddress> userAddressList;
-//
-//    @OneToOne(targetEntity = UserCredential.class)
-//    private UserCredential UserCredential;
+    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name="userID")
+    private List<UserAddress> userAddressList;
+
+    @OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name="userID")
+    private UserCredential UserCredential;
 
 
 

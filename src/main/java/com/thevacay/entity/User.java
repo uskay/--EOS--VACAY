@@ -4,6 +4,7 @@ import com.thevacay.entity.vo.PaymentMethod;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -22,14 +23,25 @@ public @Data class User {
     @Enumerated(EnumType.ORDINAL)
     private PaymentMethod lastUsedPaymentMethod;
 
-    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+    @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
     @JoinColumn(name="userID")
     private List<UserAddress> userAddressList;
 
-    @OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+    @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @JoinColumn(name="userID")
+    private List<CreditCard> creditCardList;
+
+    @OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
     @JoinColumn(name="userID")
     private UserCredential UserCredential;
 
+    @ManyToMany
+    @JoinTable(
+            name="USER_likes_ITEM",
+            joinColumns={@JoinColumn(name="userID", referencedColumnName="userID")},
+            inverseJoinColumns={@JoinColumn(name="itemID", referencedColumnName="itemID")}
+    )
+    private List<User> userList;
 
 
 }

@@ -34,7 +34,7 @@ public class UserService implements IUserService {
     @Override
     public UserResponseBean addUser(UserRequestBean request) {
         User user = new User();
-        user.setLastUsedPaymentMethod(PaymentMethod.BANK_TRANSFER);
+        user.setLastUsedPaymentMethod(PaymentMethod.CREDIT_CARD);
         user.setUserName("uskay");
         user.setAnonymous(false);
         user.setEmail("test@gmail.com");

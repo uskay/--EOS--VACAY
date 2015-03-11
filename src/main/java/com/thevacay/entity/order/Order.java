@@ -1,6 +1,9 @@
-package com.thevacay.entity;
+package com.thevacay.entity.order;
 
-import com.thevacay.entity.vo.PaymentMethod;
+import com.thevacay.entity.item.Product;
+import com.thevacay.entity.user.WebPay;
+import com.thevacay.entity.user.User;
+import com.thevacay.entity.user.UserAddress;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,21 +19,20 @@ public @Data class Order {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private long orderID;
-    private long userID;
-    private long addressID;
-    private String creditCardToken;
+//    private long userID;
+    //private long addressID;
 
     @ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
     @JoinColumn(name="userID")
-    private List<User> userList;
+    private User user;
 
     @ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
     @JoinColumn(name="addressID")
-    private List<UserAddress> userAddressList;
+    private UserAddress userAddress;
 
     @ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-    @JoinColumn(name="creditCardToken")
-    private List<CreditCard> creditCardList;
+    @JoinColumn(name="userID")
+    private WebPay webpay;
 
     @ManyToMany
     @JoinTable(

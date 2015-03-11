@@ -1,16 +1,14 @@
 package com.thevacay.service;
 
-import com.thevacay.entity.User;
-import com.thevacay.entity.UserAddress;
-import com.thevacay.entity.UserCredential;
+import com.thevacay.entity.user.User;
+import com.thevacay.entity.user.UserAddress;
+import com.thevacay.entity.user.UserCredential;
 import com.thevacay.entity.vo.PaymentMethod;
-import com.thevacay.repository.TestRepository;
+import com.thevacay.repository.UserRepository;
 import com.thevacay.service.interfaces.user.UserRequestBean;
 import com.thevacay.service.interfaces.user.UserResponseBean;
 import com.thevacay.service.interfaces.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,7 +21,7 @@ import java.util.List;
 public class UserService implements IUserService {
 
     @Autowired
-    private TestRepository test;
+    private UserRepository test;
 
 
     @Override

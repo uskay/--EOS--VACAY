@@ -49,7 +49,7 @@ public class PersistanceContext {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource);
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-        entityManagerFactoryBean.setPackagesToScan("com.thevacay.entity");
+        entityManagerFactoryBean.setPackagesToScan("com.thevacay.entity.item", "com.thevacay.entity.user", "com.thevacay.entity.order");
 
         Properties jpaProperties = new Properties();
 

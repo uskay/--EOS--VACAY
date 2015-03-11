@@ -1,4 +1,4 @@
-package com.thevacay.entity;
+package com.thevacay.entity.item;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
-package com.thevacay.entity;
+package com.thevacay.entity.item;
 
+import com.thevacay.entity.user.User;
 import com.thevacay.entity.vo.ItemType;
-import com.thevacay.entity.vo.PaymentMethod;
 import com.thevacay.entity.vo.ProductCategory;
 import lombok.Data;
 
@@ -36,11 +36,14 @@ public @Data class Item {
     @JoinColumn(name="itemID")
     private List<Product> productList;
 
-    @ManyToMany
+    @ManyToMany(
+            targetEntity=User.class,
+            cascade={CascadeType.ALL}
+    )
     @JoinTable(
             name="USER_likes_ITEM",
-            joinColumns={@JoinColumn(name="itemID", referencedColumnName="itemID")},
-            inverseJoinColumns={@JoinColumn(name="userID", referencedColumnName="userID")}
+            joinColumns={@JoinColumn(name="itemID")},
+            inverseJoinColumns={@JoinColumn(name="userID")}
     )
     private List<User> userList;
 

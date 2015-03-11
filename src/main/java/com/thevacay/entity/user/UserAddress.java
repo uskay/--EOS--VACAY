@@ -1,4 +1,4 @@
-package com.thevacay.entity;
+package com.thevacay.entity.user;
 
 import com.thevacay.entity.vo.CountryCode;
 import lombok.Data;

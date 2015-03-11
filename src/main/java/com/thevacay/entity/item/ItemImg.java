@@ -1,4 +1,4 @@
-package com.thevacay.entity;
+package com.thevacay.entity.item;
 
 import lombok.Data;
 
@@ -10,12 +10,11 @@ import javax.persistence.Table;
  * Created by uskay on 2/15/15.
  */
 @Entity
-@Table(name = "USER_CREDENTIAL")
+@Table(name = "ITEM_IMG")
 public @Data
-class UserCredential {
+class ItemImg {
 
     @Id
-    private long userID;
-    private String loginID;
-    private String password;
+    private long itemID;
+    private int imgIndex;
 }
